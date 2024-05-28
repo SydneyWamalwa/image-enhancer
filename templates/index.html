@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Enhancer</title>
+    <style>
+        /* Add your own styles here */
+        #loading {
+            display: none;
+        }
+        #progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('form').on('submit', function(event){
+                $('#loading').show();  // Show the loading indicator when the form is submitted
+                var width = 0;
+                var id = setInterval(frame, 10);
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                    } else {
+                        width++;
+                        $('#progress-bar').width(width + '%');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    <div id="loading">
+        <div id="progress-bar"></div>
+    </div>
+</body>
+</html>
