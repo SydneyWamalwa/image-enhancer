@@ -14,7 +14,7 @@ This project uses a TensorFlow Lite model to enhance images. It provides a simpl
 
 1. Clone this repository:
     ```
-    git clone https://github.com/yourusername/image-enhancer.git
+    [git clone https://github.com/yourusername/image-enhancer.git](https://github.com/SydneyWamalwa/image-enhancer.git)
     ```
 2. Navigate to the project directory:
     ```
